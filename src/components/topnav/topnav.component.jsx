@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, createRef } from 'react';
 import styled, { keyframes  } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-// import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
+import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
 import Logo from '../../assets/logos/newlogo.png';
 import bannerLogo from '../../assets/logos/bannerlogo.png';
 
@@ -103,7 +103,7 @@ const ImageAboveMenuImage = styled.img`
 const Nav = () => {
   const [menuTextIndex, setMenuTextIndex] = useState(0);
   const videoRef = useRef(createRef());
-  const video = "bridgeVideo"; // Keeping only one video
+  const video = bridgeVideo; // Keeping only one video
 
   const menuTexts = ['The future of Real Estate CRM is here', 'Built for Real Estate, Tested by Realtors', 'Manage. Automate. Focus on what really matters- Relationships', 'Streamlined workflow with Powerful AI', 'One Place, Endless Possibilities'];
 
