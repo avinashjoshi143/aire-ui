@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import MA from '../../assets/feature-icons/marketing_analysis.png';
 import CA from '../../assets/feature-icons/competition_analysis.png';
-import { FaChartBar, FaSearch } from 'react-icons/fa'
 
 const CardContainer = styled.div`
   display: grid;
