@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../../util/useAxios'; // Adjust path as per your project structure
-import { resetPassword } from '../../../util/service-urls'; // Adjust backend endpoint
+import { resetPassword } from '../../../../config'; // Adjust backend endpoint
 import { validatePassword, validateConfirmPassword } from '../../../util/auth-validation'; // Adjust validation functions
 import { useNavigate, useParams } from 'react-router-dom';
 

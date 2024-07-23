@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.styles.css'; // Import your CSS file for styling
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for password toggle
 import useAxios from '../../util/useAxios';
-import { Google_Login, LOGIN_USER } from '../../util/service-urls';
+import { Google_Login, LOGIN_USER } from '../../../config';
 import GoogleSignIn from '../Google-Signin/googleSignin';
 
 const Login = () => {

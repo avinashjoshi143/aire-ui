@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../../util/useAxios'; // Adjust path as per your project structure
-import { verifyCode } from '../../../util/service-urls'; // Adjust backend endpoint
+import { verifyCode } from '../../../../config'; // Adjust backend endpoint
 import { useNavigate, useParams } from 'react-router-dom';
 
 const VerifyEmailForm = () => {

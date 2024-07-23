@@ -1,7 +1,6 @@
 // src/GoogleSignIn.js
 import React from 'react';
 import { GoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from 'jwt-decode';
 
 // const clientId = '955815544053-psqq65pgnq6l5gphr2r6goqkt6u8qq9v.apps.googleusercontent.com';
 
