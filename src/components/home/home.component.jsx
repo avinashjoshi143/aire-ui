@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Features from '../feature-card-slider/features';
-import Analysis from '../analysis/analysis'
-
+import Analysis from '../analysis/analysis';
+import Nav from '../topnav/topnav.component';
 const BodyContainer = styled.div`
   display: grid;
   gap: 1rem;
@@ -17,7 +17,7 @@ const BodyContainer = styled.div`
 
 const WhiteBoardContainer = styled.div`
   display: grid;
-  grid-template-rows: 0.8fr 0.1fr 1.5fr 0.1fr 1fr; /* Divide into 5 rows */
+  grid-template-rows: 0.56fr 0.1fr 1fr 0.1fr 0.6fr; /* Divide into 5 rows */
   gap: 1rem;
   padding: 1rem;
   background-color: white;
@@ -106,35 +106,38 @@ const AnalysisContainer = styled.div`
   }
 `;
 
-const Body = () => {
+const Home = () => {
   return (
-    <BodyContainer>
-      <WhiteBoardContainer>
-        <VideoContainer>
-        <VideoIframe
-          src="https://www.youtube.com/embed/Ib1iEGJQc5Q?autoplay=1&controls=0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></VideoIframe>
-        </VideoContainer>
-        <TextContainer>
-          <TextHeading>
-            Stop Chasing. Start Closing.
-          </TextHeading>
-          Unlock a stream of qualified leads, target high-value prospects & save hours through streamlined workflow.<br /> 
-          Unleash your real estate business potential with AIRE.
-        </TextContainer>
-        <Features />
-        <TextContainer1>
-          Uncover hidden opportunities, gain a competitive edge & maximise return on investment through
-        </TextContainer1>
-        <AnalysisContainer>
-          <Analysis />
-        </AnalysisContainer>
-      </WhiteBoardContainer>
-    </BodyContainer>
+    <>
+      <Nav />
+      <BodyContainer>
+        <WhiteBoardContainer>
+          <VideoContainer>
+          <VideoIframe
+            src="https://www.youtube.com/embed/Ib1iEGJQc5Q?autoplay=1&controls=0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></VideoIframe>
+          </VideoContainer>
+          <TextContainer>
+            <TextHeading>
+              Stop Chasing. Start Closing.
+            </TextHeading>
+            Unlock a stream of qualified leads, target high-value prospects & save hours through streamlined workflow.<br /> 
+            Unleash your real estate business potential with AIRE.
+          </TextContainer>
+          <Features />
+          <TextContainer1>
+            Uncover hidden opportunities, gain a competitive edge & maximise return on investment through
+          </TextContainer1>
+          <AnalysisContainer>
+            <Analysis />
+          </AnalysisContainer>
+        </WhiteBoardContainer>
+      </BodyContainer>
+    </>
   );
 };
 
-export default Body;
+export default Home;

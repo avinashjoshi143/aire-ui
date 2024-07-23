@@ -1,6 +1,7 @@
 // src/components/Footer.js
 import React from 'react';
 import styled from 'styled-components';
+import App from '../slider/slider';
 
 const FooterContainer = styled.footer`
   background-color: #333;
@@ -10,9 +11,12 @@ const FooterContainer = styled.footer`
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <p>&copy; 2024 My App. All Rights Reserved.</p>
-    </FooterContainer>
+    <>
+      <FooterContainer>
+        <p>&copy; 2024 My App. All Rights Reserved.</p>
+      </FooterContainer>
+      {/* <App /> */}
+    </>
   );
 };
 

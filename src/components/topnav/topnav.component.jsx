@@ -1,15 +1,13 @@
 import React, { useRef, useState, useEffect, createRef } from 'react';
 import styled, { keyframes  } from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
-import Logo from '../../assets/logos/newlogo.png';
 import bannerLogo from '../../assets/logos/bannerlogo.png';
+import NavBar from './nav.component';
 
 const NavContainer = styled.nav`
     height: 100vh;
     display: grid;
-    grid-template-rows: 10% 40% 50%;
+    grid-template-rows: 40% 50%;
     position: relative;
 `;
 
@@ -23,23 +21,6 @@ const BackgroundVideo = styled.video`
   z-index: -1;
 `;
 
-const LogoContainer = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  place-items: center start;
-  padding-left: 1rem;
-`;
-
-const LogoImage = styled.img`
-  width: 45px;
-  height: auto;
-`;
-
-const MenuIcon = styled.div`
-  margin-right: 1rem;
-  justify-self: end;
-`;
-
 const MenuContainer = styled.div`
   display: grid;
   place-items: center start;
@@ -51,33 +32,44 @@ const MenuContainer = styled.div`
   font-size: 2rem;
   overflow: hidden;
   position: relative;
-  height: 2rem; /* Adjust as needed */
-
-  @media (max-width: 768px) {
-    white-space: wrap;
-  }
+  height: 3rem; /* Adjust as needed */
 `;
 
-const TextAnimation = keyframes`
-  0%, 90% {
+const fadeInOut = keyframes`
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  5%, 95% {
     opacity: 1;
   }
   100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
     opacity: 0;
-    transform: translateY(-100%);
   }
 `;
 
 const AnimatedText = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0; /* Initially hide the text */
-  animation: ${TextAnimation} 10s linear; /* Change to 10s for 10-second appearance */
-  animation-fill-mode: forwards; /* Keep the text visible after animation ends */
-  display: ${props => (props.showText ? 'block' : 'none')};
+  text-align: start;
+  padding-left: 1rem;
+  font-size: 24px;
+  animation: ${fadeInOut} 10s linear forwards, ${fadeOut} 6s linear 10s forwards;
 `;
 
 
@@ -101,7 +93,7 @@ const ImageAboveMenuImage = styled.img`
 `;
 
 const Nav = () => {
-  const [menuTextIndex, setMenuTextIndex] = useState(0);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const videoRef = useRef(createRef());
   const video = bridgeVideo; // Keeping only one video
 
@@ -109,13 +101,11 @@ const Nav = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setMenuTextIndex((menuTextIndex + 1) % menuTexts.length);
-    }, 10000); // Change text every 10 seconds
-  
-    return () => {
-      clearInterval(interval);
-    };
-  }, [menuTextIndex, menuTexts]);
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % menuTexts.length);
+    }, 26000); // Change text every 6 seconds
+
+    return () => clearInterval(interval);
+  }, [menuTexts.length]);
 
   useEffect(() => {
     const currentVideoElement = videoRef.current.current;
@@ -130,21 +120,12 @@ const Nav = () => {
       <BackgroundVideo ref={videoRef} autoPlay loop muted>
         <source src={video} type="video/mp4" />
       </BackgroundVideo>
-      <LogoContainer>
-        <LogoImage src={Logo} alt="Logo" />
-        <MenuIcon>
-          <FontAwesomeIcon icon={faBars} style={{ fontSize: '2rem', color: 'white' }} />
-        </MenuIcon>
-      </LogoContainer>
       <ImageAboveMenuContainer>
         <ImageAboveMenuImage src={bannerLogo} alt="Image Above Menu" />
       </ImageAboveMenuContainer>
       <MenuContainer>
-      {menuTexts.map((text, index) => (
-        <AnimatedText key={index} showText={menuTextIndex === index}>
-          {text}
-        </AnimatedText>
-      ))}</MenuContainer>
+        <AnimatedText>{menuTexts[currentTextIndex]}</AnimatedText>
+      </MenuContainer>
     </NavContainer>
   );
 };

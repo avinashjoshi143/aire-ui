@@ -1,8 +1,10 @@
 // src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';
 import App from './App';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -17,10 +19,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyles />
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+root.render(
+  <GoogleOAuthProvider clientId="955815544053-psqq65pgnq6l5gphr2r6goqkt6u8qq9v.apps.googleusercontent.com">
+    <React.StrictMode>
+      <GlobalStyles />
+      <App />
+    </React.StrictMode>
+  </GoogleOAuthProvider>
 );
