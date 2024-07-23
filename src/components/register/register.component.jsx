@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../util/useAxios'; // Adjust the path as per your project structure
-import { REGISTER_USER } from '../../../config'; // Assuming you have defined this constant
+import { APIS } from '../../util/config'; // Assuming you have defined this constant
 import { validateEmail, validatePassword, validateConfirmPassword } from '../../util/auth-validation'; // Assuming you have defined these validation functions
 import './register.styles.css'; // Your CSS styles for the form
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import eye icons from react-icons library
@@ -74,7 +74,7 @@ const RegisterForm = () => {
 
             const response = await executeRequest({
                 method: 'post',
-                url: REGISTER_USER,
+                url: APIS.REGISTER_USER,
                 data: formData,
                 headers: { 'Content-Type': 'application/json' },
             });

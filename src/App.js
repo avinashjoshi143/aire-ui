@@ -5,16 +5,16 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
-import Login from './components/login/login.component';
-import RegisterForm from './components/register/register.component';
+import Login from './components/login/login.component.jsx';
+import RegisterForm from './components/register/register.component.jsx';
 import styled from 'styled-components';
-import NavBar from './components/topnav/nav.component';
-import Home from './components/home/home.component';
-import Footer from './components/footer/footer.component';
-import HomePage from './components/home-page/home-page.component';
-import ForgotPasswordForm from './components/forgot-password-flow/forgotPasswordForm/forgotPassword';
-import VerifyEmailForm from './components/forgot-password-flow/emailVerificationForm/verifyEmail';
-import ResetPasswordForm from './components/forgot-password-flow/resetPasswordForm/resetPassword';
+import NavBar from './components/topnav/nav.component.jsx';
+import Home from './components/home/home.component.jsx';
+import Footer from './components/footer/footer.component.jsx';
+import HomePage from './components/home-page/home-page.component.jsx';
+import ForgotPasswordForm from './components/forgot-password-flow/forgotPasswordForm/forgotPassword.jsx';
+import VerifyEmailForm from './components/forgot-password-flow/emailVerificationForm/verifyEmail.jsx';
+import ResetPasswordForm from './components/forgot-password-flow/resetPasswordForm/resetPassword.jsx';
 
 const AppContainer = styled.div`
   display: grid;

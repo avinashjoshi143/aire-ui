@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, createRef } from 'react';
 import styled, { keyframes  } from 'styled-components';
 import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
 import bannerLogo from '../../assets/logos/bannerlogo.png';
-import NavBar from './nav.component';
+import NavBar from './nav.component.jsx';
 
 const NavContainer = styled.nav`
     height: 100vh;

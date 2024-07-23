@@ -1,9 +1,9 @@
 // src/components/Body.js
 import React from 'react';
 import styled from 'styled-components';
-import Features from '../feature-card-slider/features';
-import Analysis from '../analysis/analysis';
-import Nav from '../topnav/topnav.component';
+import Features from '../feature-card-slider/features.jsx';
+import Analysis from '../analysis/analysis.jsx';
+import Nav from '../topnav/topnav.component.jsx';
 const BodyContainer = styled.div`
   display: grid;
   gap: 1rem;

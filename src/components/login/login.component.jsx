@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './login.styles.css'; // Import your CSS file for styling
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for password toggle
 import useAxios from '../../util/useAxios';
-import { Google_Login, LOGIN_USER } from '../../../config';
+import { APIS } from '../../util/config';
 import GoogleSignIn from '../Google-Signin/googleSignin';
 
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
   const handleLoginSuccess = async (token) => {
     const response = await executeRequest({
         method: 'post',
-        url: Google_Login,
+        url: APIS.Google_Login,
         data: {token},
         headers: { 'Content-Type': 'application/json' },
     });
@@ -37,9 +37,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+        console.log(APIS.LOGIN_USER);
         const response = await executeRequest({
             method: 'post',
-            url: LOGIN_USER,
+            url: APIS.LOGIN_USER,
             data: {emailOrPhone, password},
             headers: { 'Content-Type': 'application/json' },
         });

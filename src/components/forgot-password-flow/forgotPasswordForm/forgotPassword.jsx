@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../../util/useAxios'; // Adjust path as per your project structure
-import { sendVerificationCode } from '../../../../config'; // Adjust backend endpoint
+import { APIS } from '../../../util/config'; // Adjust backend endpoint
 import { useNavigate } from 'react-router-dom';
 
 
@@ -27,7 +27,7 @@ const ForgotPasswordForm = () => {
             // Make API call to send verification code
             const response = await executeRequest({
                 method: 'post',
-                url: sendVerificationCode,
+                url: APIS.sendVerificationCode,
                 data: { email },
                 headers: { 'Content-Type': 'application/json' },
             });

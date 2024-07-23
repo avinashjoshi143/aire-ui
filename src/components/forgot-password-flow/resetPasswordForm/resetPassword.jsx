@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../../util/useAxios'; // Adjust path as per your project structure
-import { resetPassword } from '../../../../config'; // Adjust backend endpoint
+import { APIS } from '../../../util/config'; // Adjust backend endpoint
 import { validatePassword, validateConfirmPassword } from '../../../util/auth-validation'; // Adjust validation functions
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -45,7 +45,7 @@ const ResetPasswordForm = () => {
             // Make API call to reset password
             const response = await executeRequest({
                 method: 'post',
-                url: resetPassword,
+                url: APIS.resetPassword,
                 data: { email, newPassword },
                 headers: { 'Content-Type': 'application/json' },
             });

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from '../../../util/useAxios'; // Adjust path as per your project structure
-import { verifyCode } from '../../../../config'; // Adjust backend endpoint
+import { APIS } from '../../../util/config'; // Adjust backend endpoint
 import { useNavigate, useParams } from 'react-router-dom';
 
 const VerifyEmailForm = () => {
@@ -26,7 +26,7 @@ const VerifyEmailForm = () => {
             // Make API call to verify code
             const response = await executeRequest({
                 method: 'post',
-                url: verifyCode,
+                url: APIS.verifyCode,
                 data: { email, code },
                 headers: { 'Content-Type': 'application/json' },
             });
