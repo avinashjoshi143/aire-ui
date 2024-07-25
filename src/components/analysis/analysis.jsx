@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   place-items: center;
   align-items: center;
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -52,20 +52,22 @@ const Description = styled.div`
 `;
 
 const Analysis = () => {
-    return(
-      <CardContainer>
-        <Card>
-            <Icon src={MA} />
-            <Name>Market Analysis</Name>
-            <Description>Real-time insights of conversions , ROI & net income</Description>
-        </Card>
-        <Card>
-            <Icon src={CA} />
-            <Name>Competitive Analysis</Name>
-            <Description>Stay ahead of competition</Description>
-        </Card>
-        </CardContainer>
-    );
-}
+  return (
+    <CardContainer>
+      <Card>
+        <Icon src={MA} />
+        <Name>Market Analysis</Name>
+        <Description>
+          Real-time insights of conversions , ROI & net income
+        </Description>
+      </Card>
+      <Card>
+        <Icon src={CA} />
+        <Name>Competitive Analysis</Name>
+        <Description>Stay ahead of competition</Description>
+      </Card>
+    </CardContainer>
+  );
+};
 
 export default Analysis;

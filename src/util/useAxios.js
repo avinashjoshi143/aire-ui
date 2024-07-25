@@ -13,11 +13,10 @@ const useAxios = () => {
       // Make Axios request using the provided config
       const response = await axios(config);
       setLoading(false);
-      console.log(response.data);
       return response.data; // Return data from the response
-    } catch (error) {
+    } catch (err) {
       setLoading(false);
-      setError(error);
+      setError(err);
       throw error; // Re-throw error for the calling component to handle
     }
   };

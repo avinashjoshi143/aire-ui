@@ -88,15 +88,15 @@ module.exports = (env, argv) => {
           ],
         },
         {
-            test: /\.(mp4|webm|ogg|avi)$/, // Video file extensions
-            use: [
-                {
-                loader: 'file-loader',
-                options: {
-                    name: 'videos/[name].[hash].[ext]', // Output folder and file name pattern
-                },
-                },
-            ],
+          test: /\.(mp4|webm|ogg|avi)$/, // Video file extensions
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'videos/[name].[hash].[ext]', // Output folder and file name pattern
+              },
+            },
+          ],
         },
       ],
     },
@@ -116,7 +116,6 @@ module.exports = (env, argv) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './public/index.html',
-        favicon: './public/favicon.ico',
       }),
       new webpack.HotModuleReplacementPlugin(),
       new MiniCssExtractPlugin({
@@ -125,9 +124,6 @@ module.exports = (env, argv) => {
       }),
       new Dotenv({
         path: isProduction ? './.env.production' : './.env',
-      }),
-      new webpack.DefinePlugin({
-        'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''),
       }),
     ],
   };

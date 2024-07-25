@@ -14,7 +14,12 @@ const MultiVideoPlayer = ({ videos }) => {
   return (
     <div style={{ display: 'none' }}>
       {videos.map((video, index) => (
-        <video key={index} autoPlay muted style={{ display: currentVideoIndex === index ? 'block' : 'none' }}>
+        <video
+          key={index}
+          autoPlay
+          muted
+          style={{ display: currentVideoIndex === index ? 'block' : 'none' }}
+        >
           <source src={video.src} type="video/mp4" />
         </video>
       ))}

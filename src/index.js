@@ -2,8 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';
-import App from './App';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import App from './App';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const GlobalStyles = createGlobalStyle`

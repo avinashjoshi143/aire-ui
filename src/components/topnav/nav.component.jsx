@@ -23,14 +23,17 @@ const MenuIcon = styled.div`
 `;
 
 const NavBar = () => {
-    return (
-        <LogoContainer>
-            <LogoImage src={Logo} alt="Logo" />
-            <MenuIcon>
-            <FontAwesomeIcon icon={faBars} style={{ fontSize: '2rem', color: 'white' }} />
-            </MenuIcon>
-        </LogoContainer>
-    );
-}
+  return (
+    <LogoContainer>
+      <LogoImage src={Logo} alt="Logo" />
+      <MenuIcon>
+        <FontAwesomeIcon
+          icon={faBars}
+          style={{ fontSize: '2rem', color: 'white' }}
+        />
+      </MenuIcon>
+    </LogoContainer>
+  );
+};
 
 export default NavBar;

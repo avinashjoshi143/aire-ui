@@ -57,8 +57,6 @@ const VideoIframe = styled.iframe`
   left: 0;
 `;
 
-
-
 const TextContainer = styled.div`
   grid-row: 2 / span 1; /* Place in the second row */
   font-size: 1.6rem; /* Set the font size */
@@ -113,23 +111,24 @@ const Home = () => {
       <BodyContainer>
         <WhiteBoardContainer>
           <VideoContainer>
-          <VideoIframe
-            src="https://www.youtube.com/embed/Ib1iEGJQc5Q?autoplay=1&controls=0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></VideoIframe>
+            <VideoIframe
+              src="https://www.youtube.com/embed/Ib1iEGJQc5Q?autoplay=1&controls=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></VideoIframe>
           </VideoContainer>
           <TextContainer>
-            <TextHeading>
-              Stop Chasing. Start Closing.
-            </TextHeading>
-            Unlock a stream of qualified leads, target high-value prospects & save hours through streamlined workflow.<br /> 
+            <TextHeading>Stop Chasing. Start Closing.</TextHeading>
+            Unlock a stream of qualified leads, target high-value prospects &
+            save hours through streamlined workflow.
+            <br />
             Unleash your real estate business potential with AIRE.
           </TextContainer>
           <Features />
           <TextContainer1>
-            Uncover hidden opportunities, gain a competitive edge & maximise return on investment through
+            Uncover hidden opportunities, gain a competitive edge & maximise
+            return on investment through
           </TextContainer1>
           <AnalysisContainer>
             <Analysis />

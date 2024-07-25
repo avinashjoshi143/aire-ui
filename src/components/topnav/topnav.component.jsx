@@ -1,14 +1,14 @@
 import React, { useRef, useState, useEffect, createRef } from 'react';
-import styled, { keyframes  } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import bridgeVideo from '../../assets/banner-video/bridge_city.mp4'; // Only keeping one video import
 import bannerLogo from '../../assets/logos/bannerlogo.png';
 import NavBar from './nav.component.jsx';
 
 const NavContainer = styled.nav`
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 40% 50%;
-    position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 40% 50%;
+  position: relative;
 `;
 
 const BackgroundVideo = styled.video`
@@ -69,10 +69,10 @@ const AnimatedText = styled.div`
   text-align: start;
   padding-left: 1rem;
   font-size: 24px;
-  animation: ${fadeInOut} 10s linear forwards, ${fadeOut} 6s linear 10s forwards;
+  animation:
+    ${fadeInOut} 10s linear forwards,
+    ${fadeOut} 6s linear 10s forwards;
 `;
-
-
 
 const ImageAboveMenuContainer = styled.div`
   display: grid;
@@ -97,7 +97,13 @@ const Nav = () => {
   const videoRef = useRef(createRef());
   const video = bridgeVideo; // Keeping only one video
 
-  const menuTexts = ['The future of Real Estate CRM is here', 'Built for Real Estate, Tested by Realtors', 'Manage. Automate. Focus on what really matters- Relationships', 'Streamlined workflow with Powerful AI', 'One Place, Endless Possibilities'];
+  const menuTexts = [
+    'The future of Real Estate CRM is here',
+    'Built for Real Estate, Tested by Realtors',
+    'Manage. Automate. Focus on what really matters- Relationships',
+    'Streamlined workflow with Powerful AI',
+    'One Place, Endless Possibilities',
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
