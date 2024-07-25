@@ -126,6 +126,9 @@ module.exports = (env, argv) => {
       new Dotenv({
         path: isProduction ? './.env.production' : './.env',
       }),
+      new webpack.DefinePlugin({
+        'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL || ''),
+      }),
     ],
   };
 };
