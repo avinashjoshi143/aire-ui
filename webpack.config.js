@@ -10,7 +10,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-    entry: './src/index.js', // Entry point for the application
+    entry: '/src/index.js', // Entry point for the application
     output: {
       filename: isProduction ? '[name].[contenthash].js' : '[name].js',
       path: path.resolve(__dirname, 'dist'),
@@ -125,7 +125,7 @@ module.exports = (env, argv) => {
         chunkFilename: isProduction ? '[id].[contenthash].css' : '[id].css',
       }),
       new Dotenv({
-        path: isProduction ? './.env.production' : './.env',
+        path: isProduction ? '.env.production' : '.env',
       }),
     ],
   };
